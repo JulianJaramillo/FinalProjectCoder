@@ -8,7 +8,6 @@
   }
   
   .HomeView-header {
-    background-color: aliceblue;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -18,7 +17,6 @@
     color: black;
   }
   
-
   p{
       color: black;
   }

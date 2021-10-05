@@ -1,13 +1,12 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown,Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { CartWidget } from '../CartWidget/CartWidget.js';
-import { HomeView } from '../HomeView/HomeView';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const NavBar = () => {
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
                 <Container fluid>
                     <Navbar.Brand href="#">Book Store Items</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
