@@ -7,7 +7,6 @@ export const ItemList = ({items = []}) => {
 
             <h2 className="text-center"> Books and Products</h2>
             <hr/>
-
             <div className="row">
                 {items.map((item) => <Item {...item} key={item.id}/>)}
             </div>

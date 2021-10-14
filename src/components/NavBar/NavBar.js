@@ -8,7 +8,7 @@ export const NavBar = () => {
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
                 <Container fluid>
-                    <Navbar.Brand href="#">Book Store Items</Navbar.Brand>
+                    <Navbar.Brand href="/">Book Store Items</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -16,13 +16,12 @@ export const NavBar = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="HomeView.html">Home</Nav.Link>
-                            <Nav.Link href="ItemListContainer.html">News</Nav.Link>
+                           <Nav.Link href="/">Home</Nav.Link>
                             <NavDropdown title="Books" id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="#">Digital Books</NavDropdown.Item>
-                                <NavDropdown.Item href="#">Physical Books</NavDropdown.Item>
+                                <NavDropdown.Item href="/products/Digital">Digital Books</NavDropdown.Item>
+                                <NavDropdown.Item href="/products/Printed">Printed Books</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#">
+                                <NavDropdown.Item href="/products/">
                                     Something else here
                                 </NavDropdown.Item>
                             </NavDropdown>
@@ -30,7 +29,7 @@ export const NavBar = () => {
                                 About Us
                             </Nav.Link>
                         </Nav>
-                        <CartWidget/>
+                        <Nav.Link href="/cart"> <CartWidget/></Nav.Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

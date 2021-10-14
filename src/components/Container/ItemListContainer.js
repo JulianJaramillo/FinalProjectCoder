@@ -1,4 +1,5 @@
 import React, {useEffect,useState} from 'react'
+import { useParams } from 'react-router'
 import {askProducts} from '../../helpers/askProducts'
 import { ItemList } from './ItemList'
 
@@ -6,14 +7,19 @@ export const ItemListContainer = () => {
 
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(false)
+    const {categoryId} = useParams();
 
      useEffect(()=>{
         setLoading(true)
         
         askProducts()
-        .then((res) =>
-            setItems(res)
-        )
+        .then((res) =>{
+            if (categoryId) {
+              setItems(res.filter(prod=>prod.category === categoryId))
+            }else{
+              setItems(res)
+            }
+          })
         .catch((err => console.log(err)))
         .finally(
             ()=> {
@@ -22,7 +28,7 @@ export const ItemListContainer = () => {
             }
         )
 
-     },[])
+     },[categoryId])
 
     return (
       <section className="container my-5">
