@@ -26,7 +26,7 @@ export const NavBar = () => {
                                     Something else here
                                 </NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link as={Link} to="#">
+                            <Nav.Link as={Link} to="/">
                                 About Us
                             </Nav.Link>
                         </Nav>
