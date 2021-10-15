@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown,Container } from 'react-bootstrap';
 import { CartWidget } from '../CartWidget/CartWidget.js';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const NavBar = () => {
@@ -8,7 +9,7 @@ export const NavBar = () => {
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
                 <Container fluid>
-                    <Navbar.Brand href="/">Book Store Items</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/">Book Store Items</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -16,20 +17,20 @@ export const NavBar = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                           <Nav.Link href="/">Home</Nav.Link>
+                           <Nav.Link as={Link} to="/">Home</Nav.Link>
                             <NavDropdown title="Books" id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="/products/Digital">Digital Books</NavDropdown.Item>
-                                <NavDropdown.Item href="/products/Printed">Printed Books</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/products/Digital">Digital Books</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/products/Printed">Printed Books</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="/products/">
+                                <NavDropdown.Item as={Link} to="/products/">
                                     Something else here
                                 </NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link href="#">
+                            <Nav.Link as={Link} to="#">
                                 About Us
                             </Nav.Link>
                         </Nav>
-                        <Nav.Link href="/cart"> <CartWidget/></Nav.Link>
+                        <Nav.Link as={Link} to="/cart"> <CartWidget/></Nav.Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

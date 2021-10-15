@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 export const Item = ({id, name, autor, price, img, category}) => {
   
@@ -11,7 +12,7 @@ export const Item = ({id, name, autor, price, img, category}) => {
           <Card.Subtitle className="mb-2 text-muted"> {autor}</Card.Subtitle>
           <Card.Text>  $ {price}  </Card.Text>
           <Card.Text> {category}  </Card.Text>
-          <Card.Link href={`/detail/${id}`}>
+          <Card.Link as={Link} to={`/detail/${id}`}>
             <button type="button" style={{marginTop: 15}} className="btn btn-primary">I Want it!</button>
             </Card.Link>
         </Card.Body>
