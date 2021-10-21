@@ -12,4 +12,4 @@ y para su ejecucion npm start
 
 Preview 
 
-![Project](https://user-images.githubusercontent.com/11664981/138368696-c6f98291-7b6e-4087-924d-7cfc7f159d42.gif)
+![FinalProjectGif](https://user-images.githubusercontent.com/11664981/138369024-1c4b2ff0-9b75-472a-99f7-fb690beb800c.gif)
