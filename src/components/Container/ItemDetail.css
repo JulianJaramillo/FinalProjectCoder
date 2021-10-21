@@ -22,7 +22,6 @@
 .ProductTitle{
     font-size: 48px;
     font-weight: 600;
-    margin-top: -115px;
     text-align: justify;
 }
 
@@ -36,9 +35,18 @@
 
 .btn{
     margin: 7px;
-    width: 100px;
+    width: auto;
     border: 0;
     border-radius: 8px;
-    margin-top: 45px;
+    margin-top: 15px;
     cursor: pointer;
+}
+
+.btn-success{
+    width: auto;
+}
+
+.quantity{
+    width: auto;
+    text-align: center;
 }
