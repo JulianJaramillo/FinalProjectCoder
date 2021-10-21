@@ -12,4 +12,4 @@ y para su ejecucion npm start
 
 Preview 
 
-![Alt Text](https://imgflip.com/gif/5r9z7l)
+![Project](https://user-images.githubusercontent.com/11664981/138367653-a4474da0-7e2c-447d-8fa4-09ca24bf3d52.gif)
