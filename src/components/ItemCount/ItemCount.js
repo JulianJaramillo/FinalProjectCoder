@@ -18,13 +18,15 @@ export const ItemCount = ( {quantity,setQuantity,limit} ) => {
         <div>
             <button 
             onClick={handleSubtract}
-            className="btn btn-primary quantity">
+            disabled={quantity === 0}
+            className={`btn ${quantity === 0 ? "btn-danger": "btn-primary"}`}>
                 -
             </button>
             <span className="mx-2">{quantity}</span>
             <button 
             onClick={handleAdd}
-            className="btn btn-primary quantity">
+            disabled={quantity === limit}
+            className={`btn ${quantity === limit ? "btn-danger": "btn-primary"}`}>
                 +
             </button>
         </div>

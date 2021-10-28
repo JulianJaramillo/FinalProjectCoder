@@ -1,6 +1,6 @@
 import React from 'react'
-import { ItemListContainer } from './components/Container/ItemListContainer';
-import { ItemDetailContainer } from './components/Container/ItemDetailContainer';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { HomeView } from './components/HomeView/HomeView';
 import { NavBar } from './components/NavBar/NavBar';
 import { CartScreen } from './components/CartScreen/CartScreen';
@@ -34,7 +34,7 @@ function App() {
               <ItemListContainer />
             </Route>
             <Route exact path="/detail/:itemId">
-              <ItemDetailContainer />
+              <ItemDetailContainer/>
             </Route>
             <Route exact path="/cart">
               <CartScreen />

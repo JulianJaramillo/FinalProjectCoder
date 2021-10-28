@@ -9,7 +9,7 @@ export const ItemDetail = ({ id, name, autor, price, img, category, synopsis, st
 
     const { goBack, push } = useHistory();
     const [quantity, setQuantity] = useState(0);
-    const { addToCart, isInCart } = useContext(AppContext);
+    const { addToCart, isInCart, removeItemCart } = useContext(AppContext);
 
     const handleAddItem = () => {
         const newItem = {
@@ -26,6 +26,10 @@ export const ItemDetail = ({ id, name, autor, price, img, category, synopsis, st
         }
     }
 
+    const handleRemoveItem = () => {
+        removeItemCart(id);
+    }
+
     return (
         <>
             <div className="MainContainer">
@@ -38,11 +42,18 @@ export const ItemDetail = ({ id, name, autor, price, img, category, synopsis, st
                     <p className="ProductDescription">{synopsis}</p>
                     <h5> $ {price} </h5>
                     { isInCart(id) 
-                    ? <Link to="/cart" className="btn btn-success">Finish My Purchase!</Link>
+                    ? 
+                    <>
+                    <Link to="/cart" className="btn btn-success">Finish My Purchase!</Link>
+                    <button className="btn btn-warning"
+                            onClick={handleRemoveItem} >Remove Items
+                         </button>   
+                    </>
                     :
                     <>
                         <ItemCount quantity={quantity} setQuantity={setQuantity} limit={stock} />
                         <button className="btn btn-success"
+                            disabled={quantity === 0}
                             onClick={handleAddItem} >Add to Cart
                         </button>
                     </>

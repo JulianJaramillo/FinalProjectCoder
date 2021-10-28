@@ -9,10 +9,13 @@ const {calculateQuantity} = useContext(AppContext)
 
     return (
         <>
-         <FaShoppingCart className="CartShopping"/>
          {
              calculateQuantity() === 0? <></>
-             :<span className="mx-2">{calculateQuantity()}</span>
+             :
+             <>
+             <FaShoppingCart className="CartShopping" />
+             <span className="mx-2">{calculateQuantity()}</span>
+             </>
          } 
         </>
     )
