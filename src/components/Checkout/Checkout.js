@@ -18,6 +18,7 @@ export const Checkout = () => {
     lastName: "",
     email: "",
     telephone: "",
+    verifiedEmail:""
   });
 
   const handleInputChange = (e) => {
@@ -29,6 +30,17 @@ export const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+  
+    if (values.verifiedEmail !== values.email) {
+      Swal.fire({
+        title: "Oops",
+        text: 'The email is different',
+        icon: "error",
+      });
+
+      return
+  }
 
     setLoading(true);
     generateOrder(values, cartItems, calculateTotal())
@@ -104,6 +116,15 @@ export const Checkout = () => {
                 placeholder="Email"
                 name="email"
                 value={values.email}
+                onChange={handleInputChange}
+                required
+              />
+                <input
+                className="form-control my-2"
+                type="email"
+                placeholder="Verified Email"
+                name="verifiedEmail"
+                value={values.verifiedEmail}
                 onChange={handleInputChange}
                 required
               />
