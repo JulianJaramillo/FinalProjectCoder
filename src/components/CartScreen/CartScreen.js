@@ -29,9 +29,9 @@ export const CartScreen = () => {
                         </div>
                         <hr />
                         <h3 className="my-3">Total Price : $ {calculateTotal()}</h3>
-                        <button className="btn btn-primary">
+                        <Link to="/checkout"className="btn btn-primary">
                             Buy!
-                        </button>
+                        </Link>
                         <button
                             style={{ width: 110, textAlign: 'justify' }}
                             className="btn btn-danger"

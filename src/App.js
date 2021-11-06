@@ -5,6 +5,8 @@ import { HomeView } from './components/HomeView/HomeView';
 import { NavBar } from './components/NavBar/NavBar';
 import { CartScreen } from './components/CartScreen/CartScreen';
 import { ContextProvider } from './components/Context/AppContext';
+import { UIProvider } from './components/Context/UIContext';
+import { Checkout } from './components/Checkout/Checkout';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,7 +15,6 @@ import {
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { UIProvider } from './components/Context/UIContext';
 
 function App() {
 
@@ -38,6 +39,9 @@ function App() {
             </Route>
             <Route exact path="/cart">
               <CartScreen />
+            </Route>
+            <Route exact path="/checkout">
+              <Checkout />
             </Route>
             <Route path="*">
               <Redirect to="/" />
